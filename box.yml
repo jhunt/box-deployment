@@ -1,0 +1,24 @@
+name: box
+
+instance_groups:
+  - name: box
+    instances: 1
+    azs: [z1]
+    jobs: []
+    networks:
+      - name: default
+    stemcell: default
+    vm_type: default
+
+releases: []
+stemcells:
+  - alias: default
+    os: ubuntu-xenial
+    version: latest
+
+update:
+  canaries: 1
+  canary_watch_time: 30000-600000
+  update_watch_time: 30000-600000
+  max_in_flight: 1
+  serial: true
